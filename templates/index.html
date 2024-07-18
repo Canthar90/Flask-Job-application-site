@@ -10,11 +10,60 @@
     <title>Document</title>
   </head>
   <body class="bg-slate-300">
-    <div class="grid grid-cols-8 grid-rows-8 gap-4">
+    <div class="grid grid-cols-8 grid-rows-8 gap-6">
       <div
-        class="text-center bg-slate-700 p-2.5 mt-4 row-start-2 row-span-6 col-start-3 col-span-4 rounded-xl"
+        class="text-center pb-6 bg-slate-700 p-2.5 mt-4 row-start-1 row-span-6 col-start-2 col-span-6 rounded-xl"
       >
-        <h1 class="text-4xl font-bold text-orange-600">Job application form</h1>
+        <h1 class="text-4xl pb-4 font-bold text-slate-200">
+          Job application Form
+        </h1>
+        <div>
+          <form class="grid gap-6 text-left text-3xl text-slate-200">
+            <label for="first_name">First Name:</label>
+            <input
+              class="mx-8 text-slate-900"
+              type="text"
+              id="first_name"
+              name="first_name"
+              required
+            />
+            <label for="last_name">Last Name:</label>
+            <input
+              class="mx-8 text-slate-900"
+              type="text"
+              id="last_name"
+              name="last_name"
+              required
+            />
+            <label for="email">Email:</label>
+            <input
+              class="mx-8 text-slate-900"
+              type="email"
+              id="email"
+              name="email"
+              required
+            />
+
+            <label for="date">Available start date:</label>
+            <input
+              class="mx-8 text-slate-900"
+              type="date"
+              id="date"
+              name="date"
+              required
+            />
+            <div class="flex justify-self-start">
+              <label for="employed">Employed:</label>
+              <input
+                class="mt-2 mx-4 size-6 text-slate-900"
+                type="radio"
+                id="employed"
+                name="employed"
+                required
+              />
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </body>
