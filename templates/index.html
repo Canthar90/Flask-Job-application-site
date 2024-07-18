@@ -52,15 +52,56 @@
               name="date"
               required
             />
-            <div class="flex justify-self-start">
-              <label for="employed">Employed:</label>
-              <input
-                class="mt-2 mx-4 size-6 text-slate-900"
-                type="radio"
-                id="employed"
-                name="employed"
-                required
-              />
+            <label for="">Current occupation:</label>
+            
+            <div id="occupation">
+              <div class="flex justify-self-start">
+                <input
+                  class="mt-2 mx-4 size-6 text-slate-900"
+                  type="radio"
+                  id="employed"
+                  name="occupation"
+                  
+                />
+                <label for="employed">Employed</label>
+              </div>
+              <div class="flex justify-self-start">
+                <input
+                  class="mt-2 mx-4 size-6 text-slate-900"
+                  type="radio"
+                  id="unemployed"
+                  name="occupation"
+                  
+                />
+                <label for="unemployed">Unemployed</label>
+              </div>
+              <div class="flex justify-self-start">
+                <input
+                  class="mt-2 mx-4 size-6 text-slate-900"
+                  type="radio"
+                  id="self_employed"
+                  name="occupation"
+                  
+                />
+                <label for="self_employed">Self-employed</label>
+              </div>
+              <div class="flex justify-self-start">
+                <input
+                  class="mt-2 mx-4 size-6 text-slate-900"
+                  type="radio"
+                  id="student"
+                  name="occupation"
+                  
+                />
+                <label for="student">Student</label>
+              </div>
+          </div>
+
+          <button class="mx-4 bg-yellow-600 hover:bg-yellow-700 text-slate-900 font-bold py-2 px-4 rounded flex justify-self-start">
+            Submit
+          </button>
+        </div>
+          
             </div>
           </form>
         </div>
