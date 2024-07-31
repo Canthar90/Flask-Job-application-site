@@ -1,7 +1,27 @@
 from flask import Flask, render_template, request
+from flask_sqlalchemy import SQLAlchemy
+import dotenv
+import os
 
+dotenv.load_dotenv()
+secret_key = os.getenv("SECRET_KEY")
+database_type = os.getenv("DATABASE_TYPE")
 
 app = Flask(__name__)
+
+app.config["SECRET_KEY"] = secret_key
+app.config["SQLALCHEMY_DATABASE_URI"] = database_type
+db = SQLAlchemy(app)
+
+class Form(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    first_name = db.Column(db.String(80))
+    last_name = db.Column(db.String(80))
+    email = db.Column(db.String(80))
+    date = db.Column(db.Date)
+    occupation = db.Column(db.String(80))
+
+    
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -16,4 +36,8 @@ def index():
         print(first_name)
     return render_template("index.html")
 
-app.run(debug=True, port=5001)
+
+if __name__ == "__main__":
+    with app.app_context():
+        db.create_all()
+        app.run(debug=True, port=5001)
