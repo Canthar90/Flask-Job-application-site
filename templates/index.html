@@ -105,6 +105,17 @@
             Submit
           </button>
         </div>
+        {% if request.method == 'POST' %}
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="flex justify-center bg-yellow-900 text-slate-200 mx-1 rounded-md mt-3" >
+          {% for message in messages %}
+          {{ message }}
+          {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+        {% endif %}
           
             </div>
           </form>
