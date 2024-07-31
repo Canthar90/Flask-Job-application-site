@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 import dotenv
 import os
+from datetime import datetime as dt
 
 dotenv.load_dotenv()
 secret_key = os.getenv("SECRET_KEY")
@@ -30,10 +31,16 @@ def index():
         last_name = request.form["last_name"]
         email = request.form["email"]
         date = request.form["date"]
+        date_obj = dt.strptime(date, "%Y-%m-%d")
         occupation = request.form["occupation"]
 
-        print(occupation)
-        print(first_name)
+        form = Form(first_name=first_name, last_name=last_name,
+                     email=email, date=date_obj, occupation=occupation)
+        
+        db.session.add(form)
+        db.session.commit()
+
+
     return render_template("index.html")
 
 
